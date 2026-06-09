@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart & Checkout — Aurevo Coffee Shop</title>
+  <meta name="description" content="Review your Aurevo order and check out for pickup.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">Aurevo</a>
+      <nav class="header__nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="menu.html">Menu</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="header__actions">
+        <a href="cart.html" class="header__cart" aria-label="Shopping cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M6 6h15l-1.5 9h-12L6 6z"/>
+            <path d="M6 6L5 3H2"/>
+            <circle cx="9" cy="20" r="1"/>
+            <circle cx="18" cy="20" r="1"/>
+          </svg>
+          <span class="header__cart-count" hidden>0</span>
+        </a>
+        <a href="menu.html" class="btn btn--white">Order Now</a>
+        <button class="header__toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="cart-page">
+    <section class="page-hero page-hero--image page-hero--menu">
+      <div class="container">
+        <h1 class="page-hero__title">Your Cart</h1>
+        <p class="page-hero__subtitle">Review your items and check out for pickup at Aurevo.</p>
+      </div>
+    </section>
+
+    <section class="section section--cream">
+      <div class="container">
+        <div class="cart-empty">
+          <p class="cart-empty__text">Your cart is empty.</p>
+          <a href="menu.html" class="btn btn--dark">Browse Menu</a>
+        </div>
+
+        <div class="cart-content" hidden>
+          <div class="cart-layout">
+            <div class="cart-panel">
+              <h2 class="cart-panel__title">Order Items</h2>
+              <div class="cart-list"></div>
+            </div>
+
+            <div class="cart-panel cart-panel--summary">
+              <h2 class="cart-panel__title">Checkout</h2>
+              <div class="cart-summary">
+                <div class="cart-summary__row">
+                  <span>Subtotal</span>
+                  <span class="cart-summary__subtotal">$0.00</span>
+                </div>
+                <div class="cart-summary__row cart-summary__row--total">
+                  <span>Total</span>
+                  <span class="cart-summary__total">$0.00</span>
+                </div>
+              </div>
+
+              <form class="checkout-form">
+                <div class="form-group">
+                  <label for="checkout-name">Full Name</label>
+                  <input type="text" id="checkout-name" name="name" required placeholder="Your name">
+                </div>
+                <div class="form-group">
+                  <label for="checkout-phone">Phone</label>
+                  <input type="tel" id="checkout-phone" name="phone" required placeholder="(555) 123-4567">
+                </div>
+                <div class="form-group">
+                  <label for="checkout-email">Email</label>
+                  <input type="email" id="checkout-email" name="email" required placeholder="you@email.com">
+                </div>
+                <div class="form-group">
+                  <label for="checkout-time">Pickup Time</label>
+                  <select id="checkout-time" name="pickup" required>
+                    <option value="">Select a time</option>
+                    <option value="asap">As soon as possible</option>
+                    <option value="15">In 15 minutes</option>
+                    <option value="30">In 30 minutes</option>
+                    <option value="45">In 45 minutes</option>
+                    <option value="60">In 1 hour</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="checkout-notes">Order Notes (optional)</label>
+                  <textarea id="checkout-notes" name="notes" placeholder="Extra hot, oat milk, etc."></textarea>
+                </div>
+                <button type="submit" class="btn btn--dark checkout-form__submit">Place Order</button>
+                <p class="checkout-form__note">Pay at pickup. We'll have your order ready at the counter.</p>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="checkout-success" hidden>
+          <div class="checkout-success__box">
+            <h2>Order Placed!</h2>
+            <p>Thank you for your order. We'll start preparing it right away — see you at the counter.</p>
+            <a href="menu.html" class="btn btn--dark">Order More</a>
+            <a href="index.html" class="btn btn--outline">Back to Home</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__brand">Aurevo</p>
+          <p class="footer__desc">A neighborhood coffee shop where specialty Arabica, curated music, and good people come together.</p>
+        </div>
+        <div>
+          <p class="footer__heading">Navigate</p>
+          <div class="footer__links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="menu.html">Menu</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer__heading">Menu</p>
+          <div class="footer__links">
+            <a href="menu.html">Coffee</a>
+            <a href="menu.html">Pastries</a>
+            <a href="menu.html">Cold Drinks</a>
+            <a href="menu.html">Seasonal</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer__heading">Contact</p>
+          <div class="footer__links">
+            <a href="tel:+15551234567">(555) 123-4567</a>
+            <a href="mailto:hello@aurevo.coffee">hello@aurevo.coffee</a>
+            <a href="contact.html">142 Maple Street</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Aurevo Coffee Shop. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

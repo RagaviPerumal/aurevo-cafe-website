@@ -19,13 +19,14 @@
         <a href="contact.html">Contact</a>
       </nav>
       <div class="header__actions">
-        <a href="menu.html" class="header__cart" aria-label="Shopping bag">
+        <a href="cart.html" class="header__cart" aria-label="Shopping cart">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M6 6h15l-1.5 9h-12L6 6z"/>
             <path d="M6 6L5 3H2"/>
             <circle cx="9" cy="20" r="1"/>
             <circle cx="18" cy="20" r="1"/>
           </svg>
+          <span class="header__cart-count" hidden>0</span>
         </a>
         <a href="menu.html" class="btn btn--white">Order Now</a>
         <button class="header__toggle" aria-label="Toggle menu">
@@ -315,6 +316,7 @@
     </div>
   </footer>
 
+  <script src="js/cart.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

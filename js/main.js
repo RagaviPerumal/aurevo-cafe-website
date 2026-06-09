@@ -1,3 +1,11 @@
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
+window.addEventListener('load', () => {
+  window.scrollTo(0, 0);
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.querySelector('.header__toggle');
   const nav = document.querySelector('.header__nav');
