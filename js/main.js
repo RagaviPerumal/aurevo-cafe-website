@@ -6,8 +6,7 @@ window.addEventListener('load', () => {
   window.scrollTo(0, 0);
 });
 
-const sliderTimers = [];
-const sliderControllers = [];
+const sliderIntervals = [];
 const sliderAborts = [];
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -45,11 +44,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function destroySliders() {
-  sliderTimers.forEach((id) => clearTimeout(id));
-  sliderTimers.length = 0;
+  sliderIntervals.forEach((id) => clearInterval(id));
+  sliderIntervals.length = 0;
   sliderAborts.forEach((ac) => ac.abort());
   sliderAborts.length = 0;
-  sliderControllers.length = 0;
 
   document.querySelectorAll('[data-slider]').forEach((sliderEl) => {
     const dots = sliderEl.querySelector('.slider__dots');
@@ -74,7 +72,6 @@ function initSliders() {
     const nextBtn = sliderEl.querySelector('.slider__arrow--next');
     const dotsContainer = sliderEl.querySelector('.slider__dots');
     const autoplayDelay = parseInt(sliderEl.dataset.autoplay, 10) || DEFAULT_AUTOPLAY;
-    const pauseOnHover = sliderEl.dataset.slider !== 'hero';
 
     if (slides.length === 0) return;
 
@@ -96,9 +93,6 @@ function initSliders() {
       });
     }
 
-    let autoplayTimer = null;
-    let isPaused = false;
-
     function restartKenBurns(slide) {
       const bg = slide.querySelector('.hero-slider__bg');
       if (!bg) return;
@@ -116,43 +110,17 @@ function initSliders() {
       slides[current].classList.add('slider__slide--active');
       if (dots[current]) dots[current].classList.add('slider__dot--active');
       restartKenBurns(slides[current]);
-
-      scheduleAutoplay();
     }
 
     function next() { goTo(current + 1); }
     function prev() { goTo(current - 1); }
 
-    function scheduleAutoplay() {
-      clearTimeout(autoplayTimer);
-      if (autoplayDelay > 0 && !isPaused) {
-        autoplayTimer = setTimeout(next, autoplayDelay);
-        sliderTimers.push(autoplayTimer);
-      }
-    }
-
-    function pauseAutoplay() {
-      isPaused = true;
-      clearTimeout(autoplayTimer);
-    }
-
-    function resumeAutoplay() {
-      isPaused = false;
-      scheduleAutoplay();
-    }
-
     prevBtn?.addEventListener('click', prev, { signal });
     nextBtn?.addEventListener('click', next, { signal });
-
-    if (pauseOnHover) {
-      sliderEl.addEventListener('mouseenter', pauseAutoplay, { signal });
-      sliderEl.addEventListener('mouseleave', resumeAutoplay, { signal });
-    }
 
     let touchStartX = 0;
     sliderEl.addEventListener('touchstart', (e) => {
       touchStartX = e.changedTouches[0].screenX;
-      pauseAutoplay();
     }, { passive: true, signal });
 
     sliderEl.addEventListener('touchend', (e) => {
@@ -160,30 +128,15 @@ function initSliders() {
       if (Math.abs(diff) > 50) {
         diff > 0 ? next() : prev();
       }
-      resumeAutoplay();
     }, { passive: true, signal });
 
-    sliderControllers.push({ resume: resumeAutoplay, pause: pauseAutoplay });
-    scheduleAutoplay();
+    const intervalId = setInterval(next, autoplayDelay);
+    sliderIntervals.push(intervalId);
   });
 }
 
-window.addEventListener('pageshow', (event) => {
-  if (!document.querySelector('[data-slider]')) return;
-
-  if (event.persisted || sliderControllers.length === 0) {
+window.addEventListener('pageshow', () => {
+  if (document.querySelector('[data-slider]')) {
     initSliders();
-  } else {
-    sliderControllers.forEach((controller) => controller.resume());
-  }
-});
-
-document.addEventListener('visibilitychange', () => {
-  if (!sliderControllers.length) return;
-
-  if (document.hidden) {
-    sliderControllers.forEach((controller) => controller.pause());
-  } else {
-    sliderControllers.forEach((controller) => controller.resume());
   }
 });
