@@ -37,18 +37,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  initSliders();
+  setupPage();
 });
 
+const sliderAborts = [];
 const sliderControllers = [];
 
-function initSliders() {
+function setupPage() {
+  setupSliders();
+}
+
+function resetSliders() {
+  sliderAborts.forEach((ac) => ac.abort());
+  sliderAborts.length = 0;
   sliderControllers.length = 0;
+
+  document.querySelectorAll('[data-slider]').forEach((sliderEl) => {
+    const dots = sliderEl.querySelector('.slider__dots');
+    if (dots) dots.innerHTML = '';
+  });
+}
+
+function setupSliders() {
+  if (!document.querySelector('[data-slider]')) return;
+  resetSliders();
+  initSliders();
+}
+
+function initSliders() {
   const DEFAULT_AUTOPLAY = 5000;
 
   document.querySelectorAll('[data-slider]').forEach((sliderEl) => {
-    if (sliderEl.dataset.sliderInitialized) return;
-    sliderEl.dataset.sliderInitialized = 'true';
+    const ac = new AbortController();
+    const { signal } = ac;
+    sliderAborts.push(ac);
 
     const slides = [...sliderEl.querySelectorAll('.slider__slide')];
     const prevBtn = sliderEl.querySelector('.slider__arrow--prev');
@@ -70,7 +92,7 @@ function initSliders() {
         const dot = document.createElement('button');
         dot.className = 'slider__dot' + (i === current ? ' slider__dot--active' : '');
         dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
-        dot.addEventListener('click', () => goTo(i));
+        dot.addEventListener('click', () => goTo(i), { signal });
         dotsContainer.appendChild(dot);
         dots.push(dot);
       });
@@ -88,44 +110,45 @@ function initSliders() {
       slides[current].classList.add('slider__slide--active');
       if (dots[current]) dots[current].classList.add('slider__dot--active');
 
-      restartAutoplay();
+      scheduleAutoplay();
     }
 
     function next() { goTo(current + 1); }
     function prev() { goTo(current - 1); }
 
-    function startAutoplay() {
-      if (autoplayTimer) clearInterval(autoplayTimer);
+    function scheduleAutoplay() {
+      clearTimeout(autoplayTimer);
       if (autoplayDelay > 0 && !isPaused) {
-        autoplayTimer = setInterval(next, autoplayDelay);
+        autoplayTimer = setTimeout(next, autoplayDelay);
       }
-    }
-
-    function restartAutoplay() {
-      startAutoplay();
     }
 
     function pauseAutoplay() {
       isPaused = true;
-      if (autoplayTimer) clearInterval(autoplayTimer);
+      clearTimeout(autoplayTimer);
     }
 
     function resumeAutoplay() {
       isPaused = false;
-      startAutoplay();
+      scheduleAutoplay();
     }
 
-    prevBtn?.addEventListener('click', prev);
-    nextBtn?.addEventListener('click', next);
+    function stopAutoplay() {
+      isPaused = true;
+      clearTimeout(autoplayTimer);
+    }
 
-    sliderEl.addEventListener('mouseenter', pauseAutoplay);
-    sliderEl.addEventListener('mouseleave', resumeAutoplay);
+    prevBtn?.addEventListener('click', prev, { signal });
+    nextBtn?.addEventListener('click', next, { signal });
+
+    sliderEl.addEventListener('mouseenter', pauseAutoplay, { signal });
+    sliderEl.addEventListener('mouseleave', resumeAutoplay, { signal });
 
     let touchStartX = 0;
     sliderEl.addEventListener('touchstart', (e) => {
       touchStartX = e.changedTouches[0].screenX;
       pauseAutoplay();
-    }, { passive: true });
+    }, { passive: true, signal });
 
     sliderEl.addEventListener('touchend', (e) => {
       const diff = touchStartX - e.changedTouches[0].screenX;
@@ -133,25 +156,23 @@ function initSliders() {
         diff > 0 ? next() : prev();
       }
       resumeAutoplay();
-    }, { passive: true });
+    }, { passive: true, signal });
 
-    sliderControllers.push({ resume: resumeAutoplay, pause: pauseAutoplay });
-    startAutoplay();
+    sliderControllers.push({ resume: resumeAutoplay, pause: pauseAutoplay, stop: stopAutoplay });
+    scheduleAutoplay();
   });
 }
 
-function restartAllSliders() {
-  sliderControllers.forEach((controller) => controller.resume());
-}
-
-window.addEventListener('pageshow', () => {
-  restartAllSliders();
-});
+window.addEventListener('pageshow', setupSliders);
 
 document.addEventListener('visibilitychange', () => {
   if (document.hidden) {
     sliderControllers.forEach((controller) => controller.pause());
   } else {
-    restartAllSliders();
+    sliderControllers.forEach((controller) => controller.resume());
   }
+});
+
+window.addEventListener('pagehide', () => {
+  sliderControllers.forEach((controller) => controller.stop());
 });
