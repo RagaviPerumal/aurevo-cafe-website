@@ -40,10 +40,16 @@ document.addEventListener('DOMContentLoaded', () => {
   initSliders();
 });
 
+const sliderControllers = [];
+
 function initSliders() {
+  sliderControllers.length = 0;
   const DEFAULT_AUTOPLAY = 5000;
 
   document.querySelectorAll('[data-slider]').forEach((sliderEl) => {
+    if (sliderEl.dataset.sliderInitialized) return;
+    sliderEl.dataset.sliderInitialized = 'true';
+
     const slides = [...sliderEl.querySelectorAll('.slider__slide')];
     const prevBtn = sliderEl.querySelector('.slider__arrow--prev');
     const nextBtn = sliderEl.querySelector('.slider__arrow--next');
@@ -129,6 +135,23 @@ function initSliders() {
       resumeAutoplay();
     }, { passive: true });
 
+    sliderControllers.push({ resume: resumeAutoplay, pause: pauseAutoplay });
     startAutoplay();
   });
 }
+
+function restartAllSliders() {
+  sliderControllers.forEach((controller) => controller.resume());
+}
+
+window.addEventListener('pageshow', () => {
+  restartAllSliders();
+});
+
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) {
+    sliderControllers.forEach((controller) => controller.pause());
+  } else {
+    restartAllSliders();
+  }
+});
