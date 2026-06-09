@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery — Aurevo Coffee Shop</title>
+  <meta name="description" content="Browse photos of Aurevo coffee shop — our space, our drinks, and our community.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">Aurevo</a>
+      <nav class="header__nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="menu.html">Menu</a>
+        <a href="gallery.html" class="active">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="header__actions">
+        <a href="menu.html" class="header__cart" aria-label="Shopping bag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M6 6h15l-1.5 9h-12L6 6z"/>
+            <path d="M6 6L5 3H2"/>
+            <circle cx="9" cy="20" r="1"/>
+            <circle cx="18" cy="20" r="1"/>
+          </svg>
+        </a>
+        <a href="menu.html" class="btn btn--white">Order Now</a>
+        <button class="header__toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero page-hero--image page-hero--gallery">
+      <div class="container">
+        <h1 class="page-hero__title">Gallery</h1>
+        <p class="page-hero__subtitle">A glimpse into life at Aurevo — the coffee, the space, and the people who make it special.</p>
+      </div>
+    </section>
+
+    <section class="section section--cream">
+      <div class="container">
+        <div class="gallery-grid">
+          <img src="images/latte-art.jpg" alt="Latte art being poured" loading="lazy">
+          <img src="images/coffee-beans.jpg" alt="Coffee beans close up" loading="lazy">
+          <img src="images/croissants.jpg" alt="Fresh croissants on display" loading="lazy">
+          <img class="gallery-item--wide" src="images/cafe-interior-wide.jpg" alt="Cozy coffee shop interior" loading="lazy">
+          <img src="images/iced-coffee.jpg" alt="Iced coffee drink" loading="lazy">
+          <img src="images/cafe-counter.jpg" alt="Coffee shop counter" loading="lazy">
+          <img src="images/pour-over.jpg" alt="Pour over coffee brewing" loading="lazy">
+          <img src="images/espresso-machine.jpg" alt="Espresso machine in action" loading="lazy">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__brand">Aurevo</p>
+          <p class="footer__desc">A neighborhood coffee shop where specialty Arabica, curated music, and good people come together.</p>
+        </div>
+        <div>
+          <p class="footer__heading">Navigate</p>
+          <div class="footer__links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="menu.html">Menu</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer__heading">Menu</p>
+          <div class="footer__links">
+            <a href="menu.html">Coffee</a>
+            <a href="menu.html">Pastries</a>
+            <a href="menu.html">Cold Drinks</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer__heading">Contact</p>
+          <div class="footer__links">
+            <a href="tel:+15551234567">(555) 123-4567</a>
+            <a href="mailto:hello@aurevo.coffee">hello@aurevo.coffee</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Aurevo Coffee Shop. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

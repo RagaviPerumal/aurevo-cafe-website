@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aurevo — Coffee Shop in Your Neighborhood</title>
+  <meta name="description" content="Aurevo is a neighborhood coffee shop serving specialty Arabica coffee, fresh pastries, and good vibes. Arabica & Music & People.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">Aurevo</a>
+      <nav class="header__nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="menu.html">Menu</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="header__actions">
+        <a href="menu.html" class="header__cart" aria-label="Shopping bag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M6 6h15l-1.5 9h-12L6 6z"/>
+            <path d="M6 6L5 3H2"/>
+            <circle cx="9" cy="20" r="1"/>
+            <circle cx="18" cy="20" r="1"/>
+          </svg>
+        </a>
+        <a href="menu.html" class="btn btn--white">Order Now</a>
+        <button class="header__toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Slider -->
+    <section class="hero-slider" data-slider="hero" data-autoplay="5000">
+      <div class="slider">
+        <div class="slider__track">
+          <div class="slider__slide slider__slide--active">
+            <img class="hero-slider__bg" src="images/cafe-interior-wide.jpg" alt="">
+            <div class="slider__overlay"></div>
+            <div class="slider__content">
+              <h1 class="slider__title">Coffee Shop in your neighborhood</h1>
+              <p class="slider__subtitle">Arabica & Music & People</p>
+              <a href="menu.html" class="btn btn--white">Order Now</a>
+            </div>
+          </div>
+          <div class="slider__slide">
+            <img class="hero-slider__bg" src="images/latte-art.jpg" alt="">
+            <div class="slider__overlay"></div>
+            <div class="slider__content">
+              <h1 class="slider__title">Crafted with care</h1>
+              <p class="slider__subtitle">Single-origin beans, poured to perfection</p>
+              <a href="menu.html" class="btn btn--white">Explore Menu</a>
+            </div>
+          </div>
+          <div class="slider__slide">
+            <img class="hero-slider__bg" src="images/croissants.jpg" alt="">
+            <div class="slider__overlay"></div>
+            <div class="slider__content">
+              <h1 class="slider__title">Freshly baked daily</h1>
+              <p class="slider__subtitle">Butter croissants, muffins & more</p>
+              <a href="menu.html" class="btn btn--white">See Pastries</a>
+            </div>
+          </div>
+          <div class="slider__slide">
+            <img class="hero-slider__bg" src="images/pour-over.jpg" alt="">
+            <div class="slider__overlay"></div>
+            <div class="slider__content">
+              <h1 class="slider__title">Today's Roast</h1>
+              <p class="slider__subtitle">Ethiopian Yirgacheffe — citrus & jasmine</p>
+              <a href="menu.html" class="btn btn--white">Try It Today</a>
+            </div>
+          </div>
+          <div class="slider__slide">
+            <img class="hero-slider__bg" src="images/iced-coffee.jpg" alt="">
+            <div class="slider__overlay"></div>
+            <div class="slider__content">
+              <h1 class="slider__title">Cool & refreshing</h1>
+              <p class="slider__subtitle">Iced lattes, cold brew & summer favorites</p>
+              <a href="menu.html" class="btn btn--white">Order Now</a>
+            </div>
+          </div>
+          <div class="slider__slide">
+            <img class="hero-slider__bg" src="images/cafe-counter.jpg" alt="">
+            <div class="slider__overlay"></div>
+            <div class="slider__content">
+              <h1 class="slider__title">Your daily ritual</h1>
+              <p class="slider__subtitle">Walk in, grab a seat, and stay awhile</p>
+              <a href="contact.html" class="btn btn--white">Visit Us</a>
+            </div>
+          </div>
+        </div>
+        <div class="slider__dots"></div>
+      </div>
+    </section>
+
+    <!-- Our Story in 3 Sips -->
+    <section class="section section--cream story-sips">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Our Story in 3 Sips</h2>
+          <p class="section__subtitle">Every cup tells a story of passion, craftsmanship, and community that spans from bean to cup.</p>
+        </div>
+        <div class="story-sips__grid">
+          <div class="story-sips__item">
+            <span class="story-sips__num">01</span>
+            <h3 class="story-sips__title">The Beans</h3>
+            <p class="story-sips__text">Ethically sourced.</p>
+          </div>
+          <div class="story-sips__item">
+            <span class="story-sips__num">02</span>
+            <h3 class="story-sips__title">The Craft</h3>
+            <p class="story-sips__text">Hand-poured, every detail matters.</p>
+          </div>
+          <div class="story-sips__item">
+            <span class="story-sips__num">03</span>
+            <h3 class="story-sips__title">People</h3>
+            <p class="story-sips__text">A space to connect and unwind.</p>
+          </div>
+        </div>
+        <div class="story-sips__cta">
+          <a href="about.html" class="btn btn--dark">Discover our Story</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work remotely -->
+    <section class="section section--light remote-work">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Come &amp; Work Remotely at Aurevo</h2>
+        </div>
+        <div class="remote-work__grid">
+          <img class="remote-work__image" src="images/remote-work.jpg" alt="Woman working on a laptop with coffee at Aurevo">
+          <p class="remote-work__text">Find your focus in a cozy corner, with great Wi-Fi and better coffee, where you can enjoy peaceful moments, unwind from the hustle and bustle of daily life, and immerse yourself in a productive atmosphere. Aurevo is perfect for reading your favorite book, catching up on work, or simply contemplating your next big idea. Take a break, sip on your favorite brew, and let the world fade away as you dive into your tasks with renewed energy.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials slider -->
+    <section class="section section--dark section--bg-dark testimonials-section" style="--section-bg: url('images/cafe-interior-wide.jpg')">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">What Our Guests Say</h2>
+          <p class="section__subtitle">The best compliment is a full cup and a seat that feels like home.</p>
+        </div>
+        <div class="slider slider--testimonials" data-slider="testimonials" data-autoplay="5000">
+          <div class="slider__track">
+            <div class="slider__slide slider__slide--active">
+              <div class="testimonial-slide">
+                <img class="testimonial-slide__avatar" src="images/team-elena.jpg" alt="Sarah M.">
+                <div class="testimonial-slide__stars">★★★★★</div>
+                <p class="testimonial-slide__text">"The Ethiopian pour-over is unreal. I come here every morning before work — it's become my ritual."</p>
+                <p class="testimonial-slide__author">— Sarah M.</p>
+              </div>
+            </div>
+            <div class="slider__slide">
+              <div class="testimonial-slide">
+                <img class="testimonial-slide__avatar" src="images/team-marcus.jpg" alt="James K.">
+                <div class="testimonial-slide__stars">★★★★★</div>
+                <p class="testimonial-slide__text">"Best croissants in the neighborhood, hands down. The vibe and music make it impossible to leave."</p>
+                <p class="testimonial-slide__author">— James K.</p>
+              </div>
+            </div>
+            <div class="slider__slide">
+              <div class="testimonial-slide">
+                <img class="testimonial-slide__avatar" src="images/team-david.jpg" alt="Emma L.">
+                <div class="testimonial-slide__stars">★★★★★</div>
+                <p class="testimonial-slide__text">"Friendly staff, amazing oat milk lattes, and the coziest corner booth. My favorite spot in the neighborhood."</p>
+                <p class="testimonial-slide__author">— Emma L.</p>
+              </div>
+            </div>
+          </div>
+          <div class="slider__dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visit CTA -->
+    <section class="section section--cream section--bg" style="--section-bg: url('images/espresso-machine.jpg')">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Visit Us Today</h2>
+          <p class="section__subtitle">We're open seven days a week. Walk in, grab a seat, and stay awhile.</p>
+        </div>
+        <div class="visit-cta">
+          <img src="images/cafe-counter.jpg" alt="Aurevo coffee bar">
+          <div class="visit-cta__info">
+            <p><strong>142 Maple Street</strong>, Your Neighborhood</p>
+            <p>Mon–Fri 7am–7pm · Sat–Sun 8am–6pm</p>
+            <a href="contact.html" class="btn btn--dark">Get Directions</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__brand">Aurevo</p>
+          <p class="footer__desc">A neighborhood coffee shop where specialty Arabica, curated music, and good people come together.</p>
+          <div class="footer__social">
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" aria-label="Twitter">
+              <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <p class="footer__heading">Navigate</p>
+          <div class="footer__links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="menu.html">Menu</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer__heading">Menu</p>
+          <div class="footer__links">
+            <a href="menu.html">Coffee</a>
+            <a href="menu.html">Pastries</a>
+            <a href="menu.html">Cold Drinks</a>
+            <a href="menu.html">Seasonal</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer__heading">Contact</p>
+          <div class="footer__links">
+            <a href="tel:+15551234567">(555) 123-4567</a>
+            <a href="mailto:hello@aurevo.coffee">hello@aurevo.coffee</a>
+            <a href="contact.html">142 Maple Street</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Aurevo Coffee Shop. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

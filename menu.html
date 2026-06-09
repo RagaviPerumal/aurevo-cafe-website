@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu — Aurevo Coffee Shop</title>
+  <meta name="description" content="Explore Aurevo's menu of specialty coffee, fresh pastries, and seasonal drinks.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">Aurevo</a>
+      <nav class="header__nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="menu.html" class="active">Menu</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="header__actions">
+        <a href="menu.html" class="header__cart" aria-label="Shopping bag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M6 6h15l-1.5 9h-12L6 6z"/>
+            <path d="M6 6L5 3H2"/>
+            <circle cx="9" cy="20" r="1"/>
+            <circle cx="18" cy="20" r="1"/>
+          </svg>
+        </a>
+        <a href="menu.html" class="btn btn--white">Order Now</a>
+        <button class="header__toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero page-hero--image page-hero--menu">
+      <div class="container">
+        <h1 class="page-hero__title">Our Menu</h1>
+        <p class="page-hero__subtitle">Specialty coffee, fresh pastries, and seasonal favorites — crafted daily.</p>
+      </div>
+    </section>
+
+    <section class="section section--cream">
+      <div class="container">
+        <div class="menu-showcase">
+          <div class="menu-showcase__item">
+            <img src="images/menu-espresso.jpg" alt="Fresh espresso shot">
+            <div class="menu-showcase__label">
+              <h4>Espresso</h4>
+              <p>From $3.00</p>
+            </div>
+          </div>
+          <div class="menu-showcase__item">
+            <img src="images/menu-latte.jpg" alt="Creamy latte with art">
+            <div class="menu-showcase__label">
+              <h4>Latte</h4>
+              <p>From $4.75</p>
+            </div>
+          </div>
+          <div class="menu-showcase__item">
+            <img src="images/menu-cold-brew.jpg" alt="Iced cold brew coffee">
+            <div class="menu-showcase__label">
+              <h4>Cold Brew</h4>
+              <p>From $4.75</p>
+            </div>
+          </div>
+          <div class="menu-showcase__item">
+            <img src="images/menu-pastry.jpg" alt="Fresh baked pastries">
+            <div class="menu-showcase__label">
+              <h4>Pastries</h4>
+              <p>From $3.00</p>
+            </div>
+          </div>
+          <div class="menu-showcase__item">
+            <img src="images/menu-avocado-toast.jpg" alt="Avocado toast on sourdough">
+            <div class="menu-showcase__label">
+              <h4>Avocado Toast</h4>
+              <p>$8.50</p>
+            </div>
+          </div>
+          <div class="menu-showcase__item">
+            <img src="images/menu-affogato.jpg" alt="Affogato dessert with espresso">
+            <div class="menu-showcase__label">
+              <h4>Affogato</h4>
+              <p>$6.00</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-category">
+          <h3 class="menu-category__title">Coffee</h3>
+          <div class="menu-grid">
+            <div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <h4>Ethiopian Pour-Over</h4>
+                  <p>Today's roast — citrus & jasmine notes</p>
+                </div>
+                <span class="menu-item__price">$4.50</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <h4>Espresso</h4>
+                  <p>Double shot, single origin</p>
+                </div>
+                <span class="menu-item__price">$3.00</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <h4>Cortado</h4>
+                  <p>Espresso with steamed milk</p>
+                </div>
+                <span class="menu-item__price">$4.00</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <h4>Flat White</h4>
+                  <p>Velvety microfoam, ristretto base</p>
+                </div>
+                <span class="menu-item__price">$4.75</span>
+              </div>
+            </div>
+            <div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <h4>Latte</h4>
+                  <p>Classic espresso with steamed milk</p>
+                </div>
+                <span class="menu-item__price">$4.75</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <h4>Cappuccino</h4>
+                  <p>Equal parts espresso, milk & foam</p>
+                </div>
+                <span class="menu-item__price">$4.50</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <h4>Mocha</h4>
+                  <p>Espresso, chocolate & steamed milk</p>
+                </div>
+                <span class="menu-item__price">$5.25</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <h4>Americano</h4>
+                  <p>Espresso with hot water</p>
+                </div>
+                <span class="menu-item__price">$3.50</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-category">
+          <h3 class="menu-category__title">Cold Drinks</h3>
+          <div class="menu-grid">
+            <div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <h4>Iced Latte</h4>
+                  <p>Espresso over ice with milk</p>
+                </div>
+                <span class="menu-item__price">$5.00</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <h4>Cold Brew</h4>
+                  <p>18-hour steep, smooth & bold</p>
+                </div>
+                <span class="menu-item__price">$4.75</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <h4>Iced Matcha Latte</h4>
+                  <p>Ceremonial grade matcha & oat milk</p>
+                </div>
+                <span class="menu-item__price">$5.50</span>
+              </div>
+            </div>
+            <div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <h4>Affogato</h4>
+                  <p>Vanilla gelato drowned in espresso</p>
+                </div>
+                <span class="menu-item__price">$6.00</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <h4>Lemonade Cold Brew</h4>
+                  <p>House-made lemonade & cold brew</p>
+                </div>
+                <span class="menu-item__price">$5.25</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <h4>Oat Milk Latte (Iced)</h4>
+                  <p>Creamy oat milk, any espresso drink</p>
+                </div>
+                <span class="menu-item__price">$5.50</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-category">
+          <h3 class="menu-category__title">Pastries & Bites</h3>
+          <div class="menu-grid">
+            <div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <h4>Butter Croissant</h4>
+                  <p>Flaky, golden, baked fresh daily</p>
+                </div>
+                <span class="menu-item__price">$3.75</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <h4>Almond Croissant</h4>
+                  <p>Filled with almond cream & sliced almonds</p>
+                </div>
+                <span class="menu-item__price">$4.50</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <h4>Blueberry Muffin</h4>
+                  <p>Wild blueberries, streusel top</p>
+                </div>
+                <span class="menu-item__price">$3.50</span>
+              </div>
+            </div>
+            <div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <h4>Avocado Toast</h4>
+                  <p>Sourdough, smashed avo, chili flakes</p>
+                </div>
+                <span class="menu-item__price">$8.50</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <h4>Granola Bowl</h4>
+                  <p>House granola, yogurt & seasonal fruit</p>
+                </div>
+                <span class="menu-item__price">$7.00</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__info">
+                  <h4>Chocolate Chip Cookie</h4>
+                  <p>Soft-baked, sea salt finish</p>
+                </div>
+                <span class="menu-item__price">$3.00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="roast-bar">
+      <span class="roast-bar__icon">
+        <svg viewBox="0 0 24 24" stroke-width="1.5">
+          <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+          <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+          <line x1="6" y1="1" x2="6" y2="4"/>
+          <line x1="10" y1="1" x2="10" y2="4"/>
+          <line x1="14" y1="1" x2="14" y2="4"/>
+        </svg>
+      </span>
+      <p><strong>Today's Roast:</strong> <em>Ethiopian Yirgacheffe</em> — Notes of citrus & jasmine.</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__brand">Aurevo</p>
+          <p class="footer__desc">A neighborhood coffee shop where specialty Arabica, curated music, and good people come together.</p>
+        </div>
+        <div>
+          <p class="footer__heading">Navigate</p>
+          <div class="footer__links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="menu.html">Menu</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer__heading">Menu</p>
+          <div class="footer__links">
+            <a href="menu.html">Coffee</a>
+            <a href="menu.html">Pastries</a>
+            <a href="menu.html">Cold Drinks</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer__heading">Contact</p>
+          <div class="footer__links">
+            <a href="tel:+15551234567">(555) 123-4567</a>
+            <a href="mailto:hello@aurevo.coffee">hello@aurevo.coffee</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Aurevo Coffee Shop. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
